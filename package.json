@@ -1,0 +1,42 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon server/server.js",
+    "start": "node server/server.js",
+    "build": "npm install && npm install --prefix client && npm run build --prefix client"
+  },
+  "keywords": [],
+  "author": "davyken",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@react-oauth/google": "^0.12.1",
+    "@types/socket.io-client": "^1.4.36",
+    "axios": "^1.7.7",
+    "bcryptjs": "^2.4.3",
+    "cloudinary": "^2.5.1",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1",
+    "express-session": "^1.18.1",
+    "google-auth-library": "^9.15.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongodb": "^6.10.0",
+    "mongoose": "^8.8.1",
+    "multer": "^1.4.5-lts.1",
+    "node-fetch": "^3.3.2",
+    "nodemon": "^3.1.7",
+    "passport-google-oauth20": "^2.0.0",
+    "react-hook-form": "^7.53.2",
+    "socket.io": "^4.8.1",
+    "socket.io-client": "^4.8.1",
+    "tailwindcss-animate": "^1.0.7"
+  },
+  "devDependencies": {
+    "manifest.json": "^1.2.0"
+  }
+}
