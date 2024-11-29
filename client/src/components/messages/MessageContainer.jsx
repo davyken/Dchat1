@@ -75,6 +75,7 @@ const CallModal = ({ type, name }) => (
 				{type === 'audio' ? 'Audio' : 'Video'} call with {name}  
 			</p>  
 			<p>call... (will close in 3 seconds)</p>  
+			<p>have you understood?</p>
 		</div>  
 	</div>  
 );  
