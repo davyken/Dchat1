@@ -3,7 +3,7 @@ import useConversation from "../../zustand/useConversation";
 import MessageInput from "./MessageInput";
 import Messages from "./Messages";
 import { TiMessages } from "react-icons/ti";
-import { RiPhoneFill, RiVideoFill } from "react-icons/ri";
+// import { RiPhoneFill, RiVideoFill } from "react-icons/ri";
 import { useAuthContext } from "../../context/AuthContext";
 import Robot from "../../assets/robot.gif"
 const MessageContainer = () => {  
