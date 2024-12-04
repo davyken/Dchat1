@@ -9,7 +9,7 @@ const Messages = () => {
     const { messages, loading } = useGetMessages();
     useListenMessages();
     const lastMessageRef = useRef();
-    const { authUser } = useAuthContext(); // Get the authenticated user
+    const { authUser } = useAuthContext(); 
 
     useEffect(() => {
         // Scroll to the bottom of the messages when new messages are added
