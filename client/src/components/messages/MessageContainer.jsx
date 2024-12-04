@@ -49,14 +49,14 @@ const MessageContainer = () => {
 							<span className='text-white-100 font-bold'>{selectedConversation.fullName}</span>  
 						</div>  
 						<div className='flex gap-2'>  
-							{/* <RiPhoneFill   
+							<RiPhoneFill   
 								className='text-blue-500 cursor-pointer text-xl'   
 								onClick={() => handleCall('audio')}  
-							/> */}  
-							{/* <RiVideoFill   
+							/>  
+							<RiVideoFill   
 								className='text-blue-500 cursor-pointer text-xl'   
 								onClick={() => handleCall('video')}  
-							/> */}  
+							/>  
 						</div>  
 					</div>  
 					<Messages />  
