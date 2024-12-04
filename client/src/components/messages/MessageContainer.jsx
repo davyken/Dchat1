@@ -48,7 +48,7 @@ const MessageContainer = () => {
 							<span className='label-text block'></span>  
 							<span className='text-white-100 font-bold'>{selectedConversation.fullName}</span>  
 						</div>  
-						{/* <div className='flex gap-2'>  
+						<div className='flex gap-2'>  
 							<RiPhoneFill   
 								className='text-blue-500 cursor-pointer text-xl'   
 								onClick={() => handleCall('audio')}  
@@ -57,7 +57,7 @@ const MessageContainer = () => {
 								className='text-blue-500 cursor-pointer text-xl'   
 								onClick={() => handleCall('video')}  
 							/>  
-						</div>   */}
+						</div>  
 					</div>  
 					<Messages />  
 					<MessageInput />  
