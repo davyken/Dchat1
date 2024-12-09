@@ -22,6 +22,9 @@ dotenv.config();
 const __dirname = path.resolve();
 const PORT = process.env.PORT || 5000;
 
+// Initialize Google OAuth client
+const googleClient = new OAuth2Client(process.env.GOOGLE_CLIENT_ID);
+
 // Configure Cloudinary
 cloudinary.v2.config({
     cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
@@ -80,18 +83,16 @@ app.post("/api/auth/google", async (req, res) => {
         let user = await User.findOne({ email });
 
         if (!user) {
-            // Create new user if doesn't exist
             user = await User.create({
                 fullName: name,
                 email,
                 googleId,
                 profilePic: picture,
-                password: "", // Empty password for Google auth users
-                gender: "N/A", // Default value, can be updated later
+                password: "",
+                gender: "N/A",
             });
         }
 
-        // Generate token and set cookie
         const token = generateTokenAndSetCookie(user._id, res);
 
         res.status(200).json({
@@ -119,10 +120,6 @@ app.post("/api/upload", upload.single('file'), async (req, res) => {
         if (req.file) {
             // Upload to Cloudinary
             const result = await cloudinary.v2.uploader.upload(req.file.path);
-            
-            // Optionally save the URL to MongoDB
-            // await YourModel.create({ imageUrl: result.secure_url });
-
             return res.status(200).json({ fileUrl: result.secure_url });
         }
         return res.status(400).send("File upload failed");
@@ -139,8 +136,6 @@ app.use("/api/users", userRoutes);
 
 // Serve static files
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
-
-// Ensure the index.html file is served correctly
 app.use(express.static(path.join(__dirname, "client", "dist")));
 app.get("*", (req, res) => {
     res.sendFile(path.join(__dirname, "client", "dist", "index.html"), (err) => {
