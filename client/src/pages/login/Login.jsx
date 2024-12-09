@@ -25,10 +25,10 @@ const Login = () => {
 
     return (  
         <div className='flex flex-col items-center justify-center min-w-96 mx-auto'>  
-            <div className='w-full p-6 rounded-lg shadow-md bg-white'> {/* Changed from bg-gray-400 to bg-white */}  
+            <div className='w-full p-6 rounded-lg shadow-md bg-white'>  
                 <h1 className='text-3xl font-semibold text-center text-blue-500'>  
                     Login  
-                    <span className='text-blue-500'> DChatApp</span> {/* Adjusted text color */}  
+                    <span className='text-blue-500'> DChatApp</span>  
                 </h1>  
 
                 <form onSubmit={handleSubmit}>  
@@ -39,7 +39,7 @@ const Login = () => {
                         <input  
                             type='text'  
                             placeholder='Enter username'  
-                            className='w-full input input-bordered h-10 bg-white text-gray-700 border-gray-300 focus:border-blue-500 focus:ring focus:ring-blue-200' // Updated styling  
+                            className='w-full input input-bordered h-10 bg-white text-gray-700 border-gray-300 focus:border-blue-500 focus:ring focus:ring-blue-200'  
                             value={username}  
                             onChange={(e) => setUsername(e.target.value)}  
                         />  
@@ -53,7 +53,7 @@ const Login = () => {
                             <input  
                                 type={showPassword ? 'text' : 'password'}  
                                 placeholder='Enter Password'  
-                                className='w-full input input-bordered h-10 bg-white text-gray-700 border-white-300 focus:border-blue-500 focus:ring focus:ring-blue-200 pr-10' // Updated styling  
+                                className='w-full input input-bordered h-10 bg-white text-gray-700 border-white-300 focus:border-blue-500 focus:ring focus:ring-blue-200 pr-10'  
                                 value={password}  
                                 onChange={(e) => setPassword(e.target.value)}  
                             />  
@@ -63,18 +63,19 @@ const Login = () => {
                                 className="absolute inset-y-0 right-0 pr-3 flex items-center"  
                             >  
                                 {showPassword ? (  
-                                    <EyeOff className="h-5 w-5 text-gray-500" /> // Updated color  
+                                    <EyeOff className="h-5 w-5 text-gray-500" />  
                                 ) : (  
-                                    <Eye className="h-5 w-5 text-gray-500" /> // Updated color  
+                                    <Eye className="h-5 w-5 text-gray-500" />  
                                 )}  
                             </button>  
                         </div>  
                     </div>  
+
                     <Link to='/signup' className='text-sm hover:underline hover:text-blue-600 mt-2 inline-block'>  
                         {"Don't"} have an account?  
                     </Link>  
                     <div className='text-sm hover:underline hover:text-blue-600 mt-2 ml-2 inline-block'>  
-                        <ForgotPassword/>  
+                        <ForgotPassword />  
                     </div>  
 
                     <div>  
@@ -91,9 +92,9 @@ const Login = () => {
                             <span className="px-2 bg-transparent text-gray-300">Or continue with</span>  
                         </div>  
                     </div>  
- 
+
                     <div className="mt-4 flex justify-center">  
-                        {!googleLoading && (  
+                        {!googleLoading ? (  
                             <div className="google-login-button">  
                                 <GoogleLogin  
                                     onSuccess={handleGoogleSuccess}  
@@ -105,8 +106,7 @@ const Login = () => {
                                     disabled={loading || googleLoading}  
                                 />  
                             </div>  
-                        )}  
-                        {googleLoading && (  
+                        ) : (  
                             <div className="flex items-center justify-center">  
                                 <span className="loading loading-spinner"></span>  
                             </div>  
@@ -115,7 +115,8 @@ const Login = () => {
                 </form>  
             </div>  
 
-            <style jsx>{`  
+            {/* Removed style jsx block to avoid warning */}  
+            <style>{`  
                 .google-login-button {  
                     width: 100%;  
                     display: flex;  

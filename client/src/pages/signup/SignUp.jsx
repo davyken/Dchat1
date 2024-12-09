@@ -92,18 +92,18 @@ const SignUp = () => {
 						Already have an account?  
 					</Link>  
 					  
-					<div>  
-						{/* Terms and policies */}  
-						<input  
-							id="agreeTerms"  
-							type="checkbox"  
-							className='mr-2'  
-						/>  
-						<label htmlFor="agreeTerms" className='text-sm'>  
-							I agree to the{" "}  
-							<a href="#" className='text-blue-600 hover:underline'>Terms and Conditions</a>  
-						</label>  
-					</div>  
+					<div style={{ backgroundColor: 'white' }}>  
+    {/* Terms and policies */}  
+    <input  
+        id="agreeTerms"  
+        type="checkbox"  
+        className='checkbox size-4 border-slate-900'  
+    />  
+    <label htmlFor="agreeTerms" className='text-sm'>  
+        I agree to the{" "}  
+        <a href="#" className='text-blue-600 hover:underline'>Terms and Conditions</a>  
+    </label>  
+</div>
 
 					<div>  
 						<button className='btn btn-block text-white bg-blue-500 btn-sm mt-2 border border-slate-700' disabled={loading}>  
